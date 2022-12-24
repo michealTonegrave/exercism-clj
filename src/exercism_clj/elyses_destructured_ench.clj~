@@ -1,0 +1,31 @@
+(ns exercism-clj.elyses_destructured_ench)
+
+(defn first-card [[f & r]] f)
+
+(defn second-card [[_ s & r]] s)
+
+(def join-vec (comp vec flatten (fn [a & b]
+                                  (apply conj a (filter empty? b)))))
+
+(defn swap-top-two-cards [[f s & r]]
+  (join-vec [s f] r))
+
+(swap-top-two-cards [3 4])
+(some [])
+
+(defn discard-top-card [[f & r]] (conj [f] (vec r)))
+
+
+(def face-cards
+  ["jack" "queen" "king"])
+
+(defn insert-face-cards [[f & r]]
+  (join-vec [f] face-cards r))
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+(ns exercism_clj.tracks-on-tracks-on-tracks)
+
+(def data '("Java" "Haskell" "Clojure"))
+
+(defn new-list [] '())
+(def add-language (partial conj))
+(defn first-language [[f & others]] f)
+(defn remove-language [[f & others]] others)
+(def count-languages (partial count))
+(defn learning-list []
+        (-> (new-list)
+               (add-language "Clojure" "Lisp")
+               (remove-language)
+               (add-language "Java" "Javascript")
+               (count)))
+
+
+(learning-list)
+
+
+
+
+
